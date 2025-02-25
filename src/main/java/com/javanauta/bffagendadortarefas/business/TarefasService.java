@@ -23,9 +23,9 @@ public class TarefasService {
         return tarefasClient.gravarTarefas(dto, token);
     }
 
-    public List<TarefasDTORequest> buscaTarefasAgendadasPorPeriodo(LocalDateTime dataInicial,
-                                                                   LocalDateTime dataFinal,
-                                                                   String token) {
+    public List<TarefasDTOResponse> buscaTarefasAgendadasPorPeriodo(LocalDateTime dataInicial,
+                                                                    LocalDateTime dataFinal,
+                                                                    String token) {
         return tarefasClient.buscaListaDeTarefasPorPeriodo(dataInicial, dataFinal, token);
 
     }
@@ -45,7 +45,7 @@ public class TarefasService {
         return tarefasClient.alteraStatusNotificacao(status, id, token);
     }
 
-    public TarefasDTOResponse updateTarefas(TarefasDTORequest dto, String id, String token) {
+    public TarefasDTORequest updateTarefas(TarefasDTORequest dto, String id, String token) {
         return tarefasClient.updateTarefas(dto, id, token);
     }
 }

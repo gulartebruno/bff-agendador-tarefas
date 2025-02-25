@@ -19,7 +19,7 @@ public interface TarefasClient {
                                     @RequestHeader("Authorization") String token);
 
     @GetMapping("/eventos")
-    List<TarefasDTORequest> buscaListaDeTarefasPorPeriodo(
+    List<TarefasDTOResponse> buscaListaDeTarefasPorPeriodo(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataInicial,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataFinal,
             @RequestHeader("Authorization") String token);
@@ -38,7 +38,7 @@ public interface TarefasClient {
                                               @RequestHeader("Authorization") String token);
 
     @PutMapping
-    TarefasDTOResponse updateTarefas(@RequestBody TarefasDTORequest dto,
-                                     @RequestParam("id") String id,
-                                     @RequestHeader("Authorization") String token);
+    TarefasDTORequest updateTarefas(@RequestBody TarefasDTORequest dto,
+                                    @RequestParam("id") String id,
+                                    @RequestHeader("Authorization") String token);
 }

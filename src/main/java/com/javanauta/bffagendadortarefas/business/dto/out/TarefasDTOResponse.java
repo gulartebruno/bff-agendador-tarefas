@@ -20,4 +20,7 @@ public class TarefasDTOResponse {
     private LocalDateTime dataEvento;
 
 
+    public String getId() {
+        return "";
+    }
 }
