@@ -1,4 +1,4 @@
-package com.javanauta.bffagendadortarefas.business.dto;
+package com.javanauta.bffagendadortarefas.business.dto.in;
 
 import lombok.*;
 
@@ -7,10 +7,10 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class EnderecoDTO {
+public class EnderecoDTORequest {
 
 
-    private Long id;
+
     private String rua;
     private Long numero;
     private String complemento;
