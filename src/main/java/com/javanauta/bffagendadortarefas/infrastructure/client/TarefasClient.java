@@ -15,7 +15,7 @@ import java.util.List;
 public interface TarefasClient {
 
     @PostMapping
-    TarefasDTORequest gravarTarefas(@RequestBody TarefasDTORequest dto,
+    TarefasDTOResponse gravarTarefas(@RequestBody TarefasDTORequest dto,
                                     @RequestHeader("Authorization") String token);
 
     @GetMapping("/eventos")
@@ -25,7 +25,7 @@ public interface TarefasClient {
             @RequestHeader("Authorization") String token);
 
     @GetMapping
-    List<TarefasDTORequest> buscaTarefasPorEmail(@RequestHeader("Authorization") String token);
+    List<TarefasDTOResponse> buscaTarefasPorEmail(@RequestHeader("Authorization") String token);
 
     @DeleteMapping
     void deletaTarefaPorId(@RequestParam("id") String id,
@@ -33,12 +33,12 @@ public interface TarefasClient {
 
 
     @PatchMapping
-    TarefasDTORequest alteraStatusNotificacao(@RequestParam("status") StatusNotificacaoEnum status,
+    TarefasDTOResponse alteraStatusNotificacao(@RequestParam("status") StatusNotificacaoEnum status,
                                               @RequestParam("id") String id,
                                               @RequestHeader("Authorization") String token);
 
     @PutMapping
-    TarefasDTORequest updateTarefas(@RequestBody TarefasDTORequest dto,
+    TarefasDTOResponse updateTarefas(@RequestBody TarefasDTORequest dto,
                                     @RequestParam("id") String id,
                                     @RequestHeader("Authorization") String token);
 }

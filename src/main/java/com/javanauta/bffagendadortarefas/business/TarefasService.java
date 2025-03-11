@@ -18,7 +18,7 @@ public class TarefasService {
     private final TarefasClient tarefasClient;
 
 
-    public TarefasDTORequest gravarTarefa(String token, TarefasDTORequest dto) {
+    public TarefasDTOResponse gravarTarefa(String token, TarefasDTORequest dto) {
 
         return tarefasClient.gravarTarefas(dto, token);
     }
@@ -30,7 +30,7 @@ public class TarefasService {
 
     }
 
-    public List<TarefasDTORequest> buscaTarefasPorEmail(String token) {
+    public List<TarefasDTOResponse> buscaTarefasPorEmail(String token) {
 
         return tarefasClient.buscaTarefasPorEmail(token);
     }
@@ -40,12 +40,12 @@ public class TarefasService {
         tarefasClient.deletaTarefaPorId(id, token);
     }
 
-    public TarefasDTORequest alteraStatus(StatusNotificacaoEnum status, String id, String token) {
+    public TarefasDTOResponse alteraStatus(StatusNotificacaoEnum status, String id, String token) {
 
         return tarefasClient.alteraStatusNotificacao(status, id, token);
     }
 
-    public TarefasDTORequest updateTarefas(TarefasDTORequest dto, String id, String token) {
+    public TarefasDTOResponse updateTarefas(TarefasDTORequest dto, String id, String token) {
         return tarefasClient.updateTarefas(dto, id, token);
     }
 }
