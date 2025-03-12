@@ -7,8 +7,10 @@ import com.javanauta.bffagendadortarefas.business.dto.out.TarefasDTOResponse;
 import com.javanauta.bffagendadortarefas.business.enums.StatusNotificacaoEnum;
 import com.javanauta.bffagendadortarefas.infrastructure.security.SecurityConfig;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -23,6 +25,7 @@ import java.util.List;
 @RequestMapping("/tarefas")
 @RequiredArgsConstructor
 @Tag(name = "Tarefas", description = "Cadastro tarefas de usuário")
+@SecurityScheme(type = SecuritySchemeType.HTTP, name = SecurityConfig.SECURITY_SCHEME)
 public class TarefasController {
 
     private final TarefasService tarefasService;
